@@ -9,11 +9,9 @@ copyright : "Copyright &copy; @2023 IT Indoguna Utama"
 output_path:  inventory-indoguna.pdf
 nav: 
     - Pengenalan : 'index.md'
-    - Konfigurasi Sistem : 'wms02.md'
-    - Barang Masuk : 'wms03.md'
-    - Barang Keluar : 'wms04.md'
-    - Pindah Tempat : 'wms05.md'
-    - Pelaporan dan Analysis : 'wms06.md'
+    - Prosedur Sebelum Inventory : 'wms02.md'
+    - Prosedur Inventory : 'wms03.md'
+    - Prosedur Setelah Inventory : 'wms04.md' 
 
 markdown_extensions:
   - abbr
@@ -69,8 +67,8 @@ plugins:
         combined: false
         media_type: print
     - with-pdf: 
-        cover_subtitle: Indoguna Group Documentation
-        output_path: "../docs-wms.pdf"
+        cover_subtitle: IT Documentation
+        output_path: "../docs-inventory-count.pdf"
         
 
 extra_css:
