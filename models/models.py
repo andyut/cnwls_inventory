@@ -1,7 +1,20 @@
 # -*- coding: utf-8 -*-
-
 from odoo import models, fields, api
-
+import html2text
+import base64
+from datetime import datetime
+import requests
+import json
+import pandas as pd
+import pandas.io.sql
+import pytz
+from num2words import num2words
+import pymssql
+from odoo.exceptions import UserError
+from odoo.modules import get_modules, get_module_path
+from jinja2 import Environment, FileSystemLoader
+import pdfkit
+import os
 
 
 class CNWLS_WMS_MASTER(models.Model):
@@ -72,16 +85,51 @@ class CNWLS_OpnameMaster(models.Model):
 	_description 	= "cnwls.wms.opname"
 	company_id      = fields.Many2one('res.company', 'Company', required=True, index=True,  default=lambda self: self.env.user.company_id.id)
 	name 			= fields.Char("Opname Number")
-	itemcode		= fields.Char("Item  Code")
-	itemname 	    = fields.Char("Item Name") 
-	itemgroup 	    = fields.Char("Item Group") 
+	countdate		= fields.Char("Count Date")
+	ref2 	    	= fields.Char("Ref2") 
+	remarks 	    = fields.Char("Remarks") 
+
+	v_totalqty 		= fields.Float("Total Qty")
+	v_totalvalue	= fields.Float("Total Value")
+
+	v_sap_id 		= fields.Char("SAP ID - Docentry")
+	v_sap_docnum 	= fields.Char("SAP Docnum")
+	v_sap_status 	= fields.Char("Status")
+
+	opname_line_ids = fields.One2many("cnwls.wms.opname.line", "opname_id")
 
 
 class CNWLS_OpnameDetail(models.Model):
 	_name 			= "cnwls.wms.opname.line"
 	_description 	= "cnwls.wms.opname.line"
-	company_id      = fields.Many2one('res.company', 'Company', required=True, index=True,  default=lambda self: self.env.user.company_id.id)
+	company_id      = fields.Many2one("res.company", "Company", required=True, index=True,  default=lambda self: self.env.user.company_id.id)
+
+	opname_id		= fields.Many2one("cnwls.wms.opname","Opname")
+
 	name 			= fields.Char("Opname Number")
+	linenum 		= fields.Char("LineNumber")  
 	itemcode		= fields.Char("Item  Code")
 	itemname 	    = fields.Char("Item Name") 
 	itemgroup 	    = fields.Char("Item Group") 
+	itemsubgroup 	= fields.Char("Item Sub Group") 
+	opname_id  		= fields.Char("Opname IDS")
+	countqty 		= fields.Float("Counted Qty")
+	inwarehouseqty 	= fields.Float("in WH Qty")
+	variance 		= fields.Float("Variance")
+	afterqty		= fields.FLoat("After Opname")
+	
+	v_sap_id 		= fields.Char("SAP ID - Docentry")
+	v_sap_docnum 	= fields.Char("SAP Docnum")
+	v_sap_status 	= fields.Char("Status")
+
+
+
+class CNWLS_OpnameDetail(models.Model):
+	_name 			= "cnwls.wms.opname.generate"
+	_description 	= "cnwls.wms.opname.generate"
+	company_id      = fields.Many2one("res.company", "Company", required=True, index=True,  default=lambda self: self.env.user.company_id.id)
+
+	countdate 		= fields.Date("Count Date")
+	
+	
+

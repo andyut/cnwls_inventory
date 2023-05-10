@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "INDOGUNA GROUP - WMS ",
+    'name': "INDOGUNA GROUP - INVENTORY ",
 
     'summary': """
-        INDOGUNA GROUP - WMS  """,
+        INDOGUNA GROUP - INVENTORY  """,
 
     'description': """
-        INDOGUNA GROUP - WMS 
+        INDOGUNA GROUP - INVENTORY 
     """,
 
     'author': "Indoguna Utama, Andy Utomo",
@@ -23,7 +23,8 @@
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
+        'views/menu.xml',
         'views/views.xml',
         'views/templates.xml',
     ],
