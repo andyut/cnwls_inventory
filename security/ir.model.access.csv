@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_/data/cnwls/cnwls_wms_/data/cnwls/cnwls_wms,/data/cnwls/cnwls_wms./data/cnwls/cnwls_wms,model_/data/cnwls/cnwls_wms_/data/cnwls/cnwls_wms,,1,0,0,0

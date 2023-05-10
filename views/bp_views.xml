@@ -1,0 +1,41 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+ 
+    <record model="ir.ui.view" id="cnwls_wms_bp_tree">
+      <field name="name">cnwls.wms.bp.tree</field>
+      <field name="model">cnwls.wms.bp</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="company_id"/>
+          <field name="name"/>  
+          <field name="partner_id"/>  
+          <field name="partner_name"/>   
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="cnwls_wms_bp_form">
+      <field name="name">cnwls.wms.bp_form</field>
+      <field name="model">cnwls.wms.bp</field>
+      <field name="arch" type="xml">
+        <form>
+         <group>
+          <field name="company_id"/>
+          <field name="name"/>  
+          <field name="partner_id"/>  
+          <field name="partner_name"/>   
+         </group>
+        </form>
+      </field>
+    </record>
+        
+    <!-- actions opening views on models -->
+
+<record model="ir.actions.act_window" id="cnwls_wms_bp_action">
+  <field name="name">bp</field>
+  <field name="res_model">cnwls.wms.bp</field>
+  <field name="view_mode">tree,form</field>
+</record>
+
+  </data>
+</odoo>

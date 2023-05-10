@@ -1,0 +1,78 @@
+site_name: PANDUAN SAP B1 INVENTORY
+site_description : PT INDOGUNA UTAMA
+site_author : PT Indoguna Utama, IT Department 
+site_description: >-
+  Panduan implementasi SAP Inventory
+copyright : "Copyright &copy; @2023 IT Indoguna Utama"
+
+# Copyright 
+output_path:  inventory-indoguna.pdf
+nav: 
+    - Pengenalan : 'index.md'
+    - Konfigurasi Sistem : 'wms02.md'
+    - Barang Masuk : 'wms03.md'
+    - Barang Keluar : 'wms04.md'
+    - Pindah Tempat : 'wms05.md'
+    - Pelaporan dan Analysis : 'wms06.md'
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:materialx.emoji.twemoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+theme : 
+    name : material
+    logo : asset/logocnw1.png
+    favicon : asset/logocnw2.png
+    palette:
+        scheme: default 
+plugins:
+    - search    
+    - mermaid2 
+    - pdf-export:
+        combined: false
+        media_type: print
+    - with-pdf: 
+        cover_subtitle: Indoguna Group Documentation
+        output_path: "../docs-wms.pdf"
+        
+
+extra_css:
+    - css/extra.css        
+

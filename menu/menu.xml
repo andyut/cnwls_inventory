@@ -1,0 +1,28 @@
+<odoo>
+<data>
+    <!-- Top menu item -->
+    
+<menuitem sequence="100" name="CNW-JE" groups="cnw_inex_viewer,cnw_inex_approval" web_icon="cnw_inex,static/description/icon.png" id="cnw_inex_menu_root"/> 
+
+<!-- 
+    <menuitem sequence="105" name="..." id="cnw_invar_menu_home" parent="cnw_invar_menu_root" action="cnw_home_action" />     -->
+    <menuitem sequence="200" name="[L] ist Voucher"  groups="cnw_inex_viewer,cnw_inex_approval"  id="cnw_inex_menu" parent="cnw_inex_menu_root" />    
+ 
+        <menuitem name="Voucher / Kasbon"  groups="cnw_inex_viewer,cnw_inex_approval"  id="cnw_inex_menu_201" parent="cnw_inex_menu" action="cnw_inex_action"/> 
+  
+    <menuitem sequence="300" name="[I] ncome / Expense"  groups="cnw_inex_viewer,cnw_inex_approval"  id="cnw_inex_300_menu" parent="cnw_inex_menu_root" />    
+		<menuitem sequence="301"  name="Entertainment"  groups="cnw_inex_viewer,cnw_inex_approval"  id="cnw_inex_menu_204" parent="cnw_inex_300_menu" action="cnw_entertain_action"/> 
+    <menuitem sequence="400" name="[S]AP Jurnal Entry"  groups="cnw_inex_viewer,cnw_inex_approval"  id="cnw_inex_400_menu" parent="cnw_inex_menu_root" />    
+        <menuitem name="Jurnal Entry "  groups="cnw_inex_viewer,cnw_inex_approval"  id="cnw_inex_menu_202" parent="cnw_inex_400_menu" action="cnw_jp_action"/> 
+<!--
+		<menuitem name="SAP Jurnal Entry"  groups="cnw_inex_viewer,cnw_inex_approval"  id="cnw_inex_menu_203" parent="cnw_inex_400_menu" action="cnw_je_action"/> 
+-->
+    <menuitem sequence="500" name="[A] ccount Setting"  groups="cnw_inex_viewer,cnw_inex_approval"  id="cnw_inex_500_menu" parent="cnw_inex_menu_root" />    
+        <menuitem name="Account"  groups="cnw_inex_viewer,cnw_inex_approval"  id="cnw_account_301" parent="cnw_inex_500_menu" action="cnw_jp_coawizard_wizard"/> 
+        <menuitem name="Department"  groups="cnw_inex_viewer,cnw_inex_approval"  id="cnw_account_302" parent="cnw_inex_500_menu" action="cnw_jp_departementwizard_wizard"/> 
+        <menuitem name="Divisi"  groups="cnw_inex_viewer,cnw_inex_approval"  id="cnw_account_303" parent="cnw_inex_500_menu" action="cnw_jp_divisiwizard_wizard"/> 
+        <menuitem name="Expense Type"  groups="cnw_inex_viewer,cnw_inex_approval"  id="cnw_account_304" parent="cnw_inex_500_menu" action="cnw_jp_biayawizard_wizard"/> 
+        <menuitem name="SAP Partner"  groups="cnw_inex_viewer,cnw_inex_approval"  id="cnw_account_305" parent="cnw_inex_500_menu" action="cnw_jp_bpartnerwizard_wizard"/> 
+        
+    </data>
+</odoo>
