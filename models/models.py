@@ -108,6 +108,7 @@ class CNWLS_OpnameDetail(models.Model):
 
 	name 			= fields.Char("Opname Number")
 	linenum 		= fields.Char("LineNumber")  
+	item 	    	= fields.Char("Item") 
 	itemcode		= fields.Char("Item  Code")
 	itemname 	    = fields.Char("Item Name") 
 	itemgroup 	    = fields.Char("Item Group") 
