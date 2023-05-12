@@ -89,8 +89,8 @@ class CNWLS_OpnameMaster(models.Model):
 	ref2 	    	= fields.Char("Ref2") 
 	remarks 	    = fields.Char("Remarks") 
 
-	v_totalqty 		= fields.Float("Total Qty")
-	v_totalvalue	= fields.Float("Total Value")
+	v_totalqty 		= fields.Float("Total Qty  Inventory Counting")
+	v_totalvalue	= fields.Float("Total Value Inventory Counting")
 
 	v_sap_id 		= fields.Char("SAP ID - Docentry")
 	v_sap_docnum 	= fields.Char("SAP Docnum")
@@ -115,8 +115,10 @@ class CNWLS_OpnameDetail(models.Model):
 	opname_id  		= fields.Char("Opname IDS")
 	countqty 		= fields.Float("Counted Qty")
 	inwarehouseqty 	= fields.Float("in WH Qty")
-	variance 		= fields.Float("Variance")
+	variance 		= fields.Float("Variance / difference")
 	afterqty		= fields.FLoat("After Opname")
+	avgprice		= fields.FLoat("Avg Price")
+	amount			= fields.FLoat("Amount")
 	
 	v_sap_id 		= fields.Char("SAP ID - Docentry")
 	v_sap_docnum 	= fields.Char("SAP Docnum")
@@ -124,12 +126,16 @@ class CNWLS_OpnameDetail(models.Model):
 
 
 
-class CNWLS_OpnameDetail(models.Model):
+class CNWLS_OpnameGenerate(models.TransientModel):
 	_name 			= "cnwls.wms.opname.generate"
 	_description 	= "cnwls.wms.opname.generate"
 	company_id      = fields.Many2one("res.company", "Company", required=True, index=True,  default=lambda self: self.env.user.company_id.id)
 
 	countdate 		= fields.Date("Count Date")
-	
+
+	filexls         = fields.Binary("File Output")    
+	filenamexls     = fields.Char("File Name Output")
+
+	v_sap_ids 		= fields.Char("SAP ID - Docentry")
 	
 

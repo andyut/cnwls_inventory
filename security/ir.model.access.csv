@@ -1,2 +1,9 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_/data/cnwls/cnwls_wms_/data/cnwls/cnwls_wms,/data/cnwls/cnwls_wms./data/cnwls/cnwls_wms,model_/data/cnwls/cnwls_wms_/data/cnwls/cnwls_wms,,1,0,0,0
+access_cnwls_wms_warehouse,access_cnwls_wms_warehouse,model_cnwls_wms_warehouse,,1,1,1,1
+access_cnwls_wms_location,access_cnwls_wms_location,model_cnwls_wms_location,,1,1,1,1
+access_cnwls_wms_bin,access_cnwls_wms_bin,model_cnwls_wms_bin,,1,1,1,1
+access_cnwls_wms_bp,access_cnwls_wms_bp,model_cnwls_wms_bp,,1,1,1,1
+access_cnwls_wms_item,access_cnwls_wms_item,model_cnwls_wms_item,,1,1,1,1
+access_cnwls_wms_opname,access_cnwls_wms_opname,model_cnwls_wms_opname,,1,1,1,1
+access_cnwls_wms_opname_line,access_cnwls_wms_opname_line,model_cnwls_wms_opname_line,,1,1,1,1
+access_cnwls_wms_opname_generate,access_cnwls_wms_opname_generate,model_cnwls_wms_opname_generate,,1,1,1,1
