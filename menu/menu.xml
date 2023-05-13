@@ -8,13 +8,13 @@
     <menuitem sequence="105" name="..." id="cnw_invar_menu_home" parent="cnw_invar_menu_root" action="cnw_home_action" />     -->
     <menuitem sequence="200" name="[L] ist Opname"  groups="cnw_wms_general"  id="cnwls_wms_menu" parent="cnwls_wms_menu_root" />    
  
-        <menuitem name="Inventory Counting"  groups="cnw_wms_general"  id="cnwls_wms_menu_201" parent="cnwls_wms_menu" action="cnwls_wms_action"/> 
+        <menuitem name="Inventory Counting"  groups="cnw_wms_general"  id="cnwls_wms_menu_201" parent="cnwls_wms_menu" action="cnwls_wms_opname_action"/> 
  
-        <menuitem name="Inventory Posting"  groups="cnw_wms_general"  id="cnwls_wms_menu_202" parent="cnwls_wms_menu" action="cnwls_wms_action"/> 
+        <menuitem name="Inventory Counting Line"  groups="cnw_wms_general"  id="cnwls_wms_menu_202" parent="cnwls_wms_menu" action="cnwls_wms_opname_line_action"/> 
   
     <menuitem sequence="300" name="[S] etting"  groups="cnw_wms_general"  id="cnwls_wms_300_menu" parent="cnwls_wms_menu_root" />    
-		<menuitem sequence="301"  name="Master Item"  groups="cnw_wms_general"  id="cnwls_wms_menu_301" parent="cnwls_wms_300_menu" action="cnw_entertain_action"/> 
-		<menuitem sequence="302"  name="Master Warehouse"  groups="cnw_wms_general"  id="cnwls_wms_menu_302" parent="cnwls_wms_300_menu" action="cnw_entertain_action"/>  
+		<menuitem sequence="301"  name="Master Item"  groups="cnw_wms_general"  id="cnwls_wms_menu_301" parent="cnwls_wms_300_menu" action="cnwls_wms_item_action"/> 
+		<menuitem sequence="302"  name="Master Warehouse"  groups="cnw_wms_general"  id="cnwls_wms_menu_302" parent="cnwls_wms_300_menu" action="cnwls_wms_warehouse_action"/>  
      
         
     </data>

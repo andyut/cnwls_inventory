@@ -98,6 +98,9 @@ class CNWLS_OpnameMaster(models.Model):
 
 	opname_line_ids = fields.One2many("cnwls.wms.opname.line", "opname_id")
 
+	json_param 		= fields.Char("json_param")
+	json_result 	= fields.Char("json_result")
+
 
 class CNWLS_OpnameDetail(models.Model):
 	_name 			= "cnwls.wms.opname.line"
@@ -117,14 +120,14 @@ class CNWLS_OpnameDetail(models.Model):
 	countqty 		= fields.Float("Counted Qty")
 	inwarehouseqty 	= fields.Float("in WH Qty")
 	variance 		= fields.Float("Variance / difference")
-	afterqty		= fields.FLoat("After Opname")
-	avgprice		= fields.FLoat("Avg Price")
-	amount			= fields.FLoat("Amount")
+	afterqty		= fields.Float("After Opname")
+	avgprice		= fields.Float("Avg Price")
+	amount			= fields.Float("Amount")
 	
 	v_sap_id 		= fields.Char("SAP ID - Docentry")
 	v_sap_docnum 	= fields.Char("SAP Docnum")
 	v_sap_status 	= fields.Char("Status")
-
+	v_sap_freeze 	= fields.Char("Freeze")
 
 
 class CNWLS_OpnameGenerate(models.TransientModel):

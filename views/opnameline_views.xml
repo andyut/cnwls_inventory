@@ -1,0 +1,49 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+
+        <record model="ir.ui.view" id="cnwls_wms_opname_line_tree">
+            <field name="name">cnwls.wms.opname.line.tree</field>
+            <field name="model">cnwls.wms.opname.line</field>
+            <field name="arch" type="xml">
+                <tree string="Item Line" >
+                    <field name="company_id"/>
+                    <field name="linenum"/>
+                    <field name="item"/>
+                    <field name="itemcode"/>
+                    <field name="itemname"/>
+                    <field name="itemgroup"/>
+                    <field name="itemsubgroup"/>
+                    <field name="countqty"/>
+                    <field name="inwarehouseqty" readonly="1"/>
+                    <field name="variance" readonly="1"/>
+                    <field name="avgprice" readonly="1"/>
+                    <field name="amount" readonly="1"/>  
+                </tree>
+            </field>
+        </record>
+        
+
+        <record model="ir.ui.view" id="cnwls_wms_opname_line_search">
+            <field name="name">cnwls.wms.opname.line.search</field>
+            <field name="model">cnwls.wms.opname.line</field>
+            <field name="arch" type="xml">
+                <search string="Search"> 
+                    <field name="ref2" />
+                    <field name="remarks" />
+                    <field name="countdate" /> 
+
+                    <filter string="countdate" name="group_countdate" domain="[]" context="{'group_by':'countdate'}"/> 
+                </search>
+            </field>
+        </record>
+        <!-- actions opening views on models -->
+
+        <record model="ir.actions.act_window" id="cnwls_wms_opname_line_action">
+            <field name="name">Inventory Counting</field>
+            <field name="res_model">cnwls.wms.opname.line</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>

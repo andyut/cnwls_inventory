@@ -23,11 +23,13 @@
 
     # always loaded
     'data': [
+
         'security/ir.model.access.csv',
         'security/user_groups.xml',
-        'views/menu.xml',
-        'views/views.xml',
-        'views/templates.xml',
+        'views/warehouse_views.xml',
+        'views/opname_views.xml',
+        'views/item_views.xml',
+        'menu/menu.xml', 
     ],
     # only loaded in demonstration mode
     'demo': [

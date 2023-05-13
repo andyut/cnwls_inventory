@@ -1,3 +1,3 @@
 # -*- coding: utf-8 -*-
 
-from . import master_models
+from . import models

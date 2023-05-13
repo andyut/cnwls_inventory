@@ -5,7 +5,7 @@
             <field name="name">CNW-Inventory (Stock Opname)</field>
         </record>
  
-        <record id="cnw_wms_viewer" model="res.groups">
+        <record id="cnw_wms_general" model="res.groups">
             <field name="category_id" ref="cnwls_inventory.module_cnw_wms_category" />
             <field name="users" eval="[(4,ref('base.user_root'))]"/>
             <field name="name">Regular User</field> 
